@@ -1,0 +1,17 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+# User Specific aliases
+alias b3="ssh alex@weier.myownb3.com"
+alias muq="ssh alex@muq.ch"
+alias jackfruit="ssh amuelli@jackfruit.icu.uzh.ch"
+alias distripress="ssh distripress.net0@ssh.netzone.ch"
+alias ll="ls -l"
+alias la="ls -A"
+alias lla="ls -la"
+
+# use vim as standard editor
+export EDITOR=/usr/bin/vim
+
+# enable coloring
+export CLICOLOR=1
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
