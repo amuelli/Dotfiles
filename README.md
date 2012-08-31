@@ -1,11 +1,13 @@
 # Dotfiles
 
 ## Description
-This is my own repository of bash and vim configurations, inspired by <https://github.com/haridas/Dotfiles>. So far my .vimrc file has been a mess and I will now try to reduce it to the settings I really need with nice commenting.
-
-## VIM
-### Plugins
-For easy handeling of plugins we make use of pathogen.vim which loads all plugins from the vim-files/vim/bundle directory. Plugins that are available as a git repository were added as submodules and can be updated easily:
-> git submodule init  
-> git pull
+This is my backup of my bash, vim and git configs. So far my .vimrc file has been a mess and I will now try to reduce it to the settings I really need with nice commenting.
+## Install
+To install clone this repository and create the following symbolic links:
+	ln -s Dotfiles/bash/bashrc ~/.bashrc
+	ln -s Dotfiles/vim-files/vim ~/.vim
+	ln -s Dotfiles/vim-files/vimrc ~/.vimrc
+	ln -s Dotfiles/git/gitconfig ~/.gitconfig
+## VIM Plugins 
+For easy handeling of vim plugins I use of [vundle] (https://github.com/gmarik/vundle). The listed bundles in the vimrc file can be installed to vim/bundle with the *:BundleInstall* command.
 
