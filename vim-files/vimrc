@@ -1,33 +1,92 @@
+"" VIM Settings
+
 set nocompatible               " be iMproved
-filetype off                   " required!
+filetype off                   " required for Vundle!
+filetype plugin indent on      " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
+"" let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-" Bundles
-"
-" original repos on github
-Bundle 'altercation/vim-colors-solarized'
+"" Bundles
+Bundle 'amuelli/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
-Bundle 'wincent/Command-T'
 
-" Look 
+Bundle 'garbas/vim-snipmate'
+" snipmate dependencies:
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+
+Bundle 'tpope/vim-markdown'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
+"" Look 
 syntax enable
 set background=dark
 colorscheme solarized
-set gfn=Monaco\ for\ Powerline:h12
+call togglebg#map("<F5>")
+set gfn=Source\ Code\ Pro\ for\ Powerline:h14
 set t_Co=256
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme = 'solarized2'
+
+
 if has("gui_running")
     set guioptions=egmt
 endif
 
-" Key Mappings
+"" Common Settings
+set encoding=utf-8
+set hidden
+set autoindent
+set showmode
+set showcmd
+set cursorline
+set number
+
+"" Tab Settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"" To  show special characters in Vim
+set list
+set listchars=tab:▸\ ,eol:¬
+
+"" Key Mappings
 let mapleader = ","
+nnoremap <leader>n :NERDTreeToggle<cr>
+" faster window navigation
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Press Space to turn off highlighting and clear any message already displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+"" OSX settings
+" Make yy, D, and P work with the OSX clipboard
+set clipboard=unnamed
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+"" Plugin Settings
+" LatexBox
+let g:LatexBox_viewer = 'skim'
+let g:LatexBox_latexmk_options = '-pvc'
