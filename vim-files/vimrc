@@ -79,6 +79,21 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"Moving around wrapped lines
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-4> g$
+vmap <D-6> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-4> g$
+nmap <D-6> g^
+nmap <D-0> g^
+
+"" Custom Commands
+" go into wrap mode
+command! -nargs=* Wrap set wrap linebreak nolist
 
 "" OSX settings
 " Make yy, D, and P work with the OSX clipboard
