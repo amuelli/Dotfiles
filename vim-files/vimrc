@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 "" Bundles
 Bundle 'amuelli/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'amuelli/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
@@ -36,7 +36,7 @@ set gfn=Source\ Code\ Pro\ for\ Powerline:h14
 set t_Co=256
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme = 'solarized2'
+let g:Powerline_colorscheme = 'solarized'
 
 
 if has("gui_running")
