@@ -1,7 +1,27 @@
 source .bashrc
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Set git autocompletion and PS1 integration
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Python virtualenvwrapper
+export WORKON_HOME=$HOME/Code/Python/.env
+export PROJECT_HOME=$HOME/Code/Python
+source /usr/local/bin/virtualenvwrapper.sh
+
+### Postgress
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"

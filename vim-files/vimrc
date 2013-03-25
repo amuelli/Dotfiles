@@ -13,10 +13,12 @@ Bundle 'gmarik/vundle'
 "" Bundles
 Bundle 'amuelli/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-Bundle 'amuelli/vim-powerline'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
+Bundle 'majutsushi/tagbar'
 
 Bundle 'garbas/vim-snipmate'
 " snipmate dependencies:

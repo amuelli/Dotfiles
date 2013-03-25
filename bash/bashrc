@@ -3,6 +3,7 @@
 # User Specific aliases
 alias b3="ssh alex@weier.myownb3.com"
 alias muq="ssh alex@muq.ch"
+alias irc="ssh serum33@muq.ch"
 alias jackfruit="ssh amuelli@jackfruit.icu.uzh.ch"
 alias distripress="ssh distripress.net0@ssh.netzone.ch"
 alias ll="ls -l"
