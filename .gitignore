@@ -1,3 +1,5 @@
 vim-files/vim/bundle
 weechat/logs
+*.log
 weechat/ssl
+
