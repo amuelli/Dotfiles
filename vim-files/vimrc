@@ -14,7 +14,8 @@ Bundle 'gmarik/vundle'
 Bundle 'amuelli/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'amuelli/vim-powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
@@ -37,9 +38,6 @@ call togglebg#map("<F5>")
 set gfn=Source\ Code\ Pro\ for\ Powerline:h14
 set t_Co=256
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme = 'solarized'
-
 
 if has("gui_running")
     set guioptions=egmt
@@ -109,3 +107,11 @@ let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn'
 " LatexBox
 let g:LatexBox_viewer = 'skim'
 let g:LatexBox_latexmk_options = '-pvc'
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabCompletionContexts = ['s:ContextDiscover']
+"let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+"let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-p>", "&omnifunc:<c-x><c-o>"]
+"let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>"]
+" Powerline
+"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
