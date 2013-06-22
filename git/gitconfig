@@ -17,3 +17,5 @@
 	quotepath = false
 	editor = vim
 	excludesfile = ~/.gitignore
+[push]
+	default = simple

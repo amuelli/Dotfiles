@@ -40,8 +40,26 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git brew pip osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# User Specific aliases
+alias b3="ssh alex@weier.myownb3.com"
+alias muq="ssh alex@muq.ch"
+alias irc="ssh serum33@muq.ch"
+alias jackfruit="ssh amuelli@jackfruit.icu.uzh.ch"
+alias distripress="ssh distripress.net0@ssh.netzone.ch"
+alias ll="ls -l"
+alias la="ls -A"
+alias lla="ls -la"
+
+# Python virtualenvwrapper
+export WORKON_HOME=$HOME/Code/Python/.env
+export PROJECT_HOME=$HOME/Code/Python
+source /usr/local/bin/virtualenvwrapper.sh
+
+### Postgress
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
