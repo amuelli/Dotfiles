@@ -25,17 +25,18 @@ Bundle 'garbas/vim-snipmate'
 " snipmate dependencies:
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'davidhalter/jedi-vim'
 
 "" Look 
 syntax enable
 set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
-set gfn=Source\ Code\ Pro\ for\ Powerline:h14
+set gfn=Source\ Code\ Pro\ Light\ for\ Powerline:h14
 set t_Co=256
 set laststatus=2
 
@@ -102,16 +103,22 @@ set clipboard=unnamed
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" Plugin Settings
+let g:ctrlp_custom_ignore = '\.pyc'
 " NERDTree
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 " LatexBox
 let g:LatexBox_viewer = 'skim'
 let g:LatexBox_latexmk_options = '-pvc'
-" Supertab
+" SnipMate
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['python'] = 'django,python'
+" Supertab & OmniComplete
 let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabCompletionContexts = ['s:ContextDiscover']
 "let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 "let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-p>", "&omnifunc:<c-x><c-o>"]
-"let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>"]
+" jedi-vim
+let g:jedi#use_tabs_not_buffers = 0
 " Powerline
-"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
+let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
