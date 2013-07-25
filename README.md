@@ -1,7 +1,6 @@
 # Dotfiles
-
 ## Description
-This is basically a backup of my bash, vim, git and some other configs. So far my .vimrc file has been a mess and I will now try to reduce it to the settings I really need and add some nice commenting.
+This is a backup of my zsh, vim, git and some other configs.
 ## Install
 To install clone this repository and create the following symbolic links:
 
@@ -24,4 +23,6 @@ The listed bundles in the vimrc file can now be installed to vim/bundle by openi
 
 ## Update submodules
 To update the submodules (vundle and oh-my-zsh):
+
     git submodule foreach git pull origin master
+
