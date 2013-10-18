@@ -43,11 +43,13 @@ ZSH_THEME="solarized-powerline"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew python pip virtualenv osx)
+plugins=(git brew python pip virtualenv osx tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
 # User Specific aliases
 alias b3="ssh alex@weier.myownb3.com"
