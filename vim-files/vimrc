@@ -14,8 +14,10 @@ Bundle 'gmarik/vundle'
 Bundle 'amuelli/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'amuelli/vim-powerline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Bundle 'itchyny/lightline.vim'
+Bundle 'bling/vim-airline'
+"Bundle 'file:///Volumes/HDD/Users/alex/Code/Python/powerline' , {'rtp': 'powerline/bindings/vim/'}
+"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
@@ -27,16 +29,20 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 
+Bundle 'pangloss/vim-javascript'
+Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'davidhalter/jedi-vim'
+"Bundle 'klen/python-mode'
 
-"" Look 
+Bundle 'christoomey/vim-tmux-navigator'
+"" Look
 syntax enable
 set background=dark
 colorscheme solarized
 call togglebg#map("<F5>")
-set gfn=Source\ Code\ Pro\ Light\ for\ Powerline:h14
+set gfn=Source\ Code\ Pro\ for\ Powerline:h14
 set t_Co=256
 set laststatus=2
 
@@ -45,19 +51,26 @@ if has("gui_running")
 endif
 
 "" Common Settings
-set encoding=utf-8
+" UTF8 or die.
+set encoding=utf8
 set hidden
 set autoindent
 set showmode
 set showcmd
 set cursorline
+" Numbered lines.
 set number
+" Keep cursor away from edges of screen.
+set so=14
 
 "" Tab Settings
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
+"" Backspace settings
+set backspace=2 " make backspace work like most other apps
 
 "" Searching
 set hlsearch
@@ -71,7 +84,7 @@ set listchars=tab:▸\ ,eol:¬
 
 "" Key Mappings
 let mapleader = ","
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>m :NERDTreeToggle<cr>
 " faster window navigation
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
@@ -92,9 +105,8 @@ nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
 
-"" Custom Commands
-" go into wrap mode
-command! -nargs=* Wrap set wrap linebreak nolist
+set ttimeout
+set ttimeoutlen=50
 
 "" OSX settings
 " Make yy, D, and P work with the OSX clipboard
@@ -103,12 +115,22 @@ set clipboard=unnamed
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" Plugin Settings
+""JavaScript
+let g:used_javascript_libs = 'angularjs,jquery'
+" JavaScript (tabs = 2, lines = 79)
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript set sw=2
+autocmd FileType javascript set ts=2
+autocmd FileType javascript set sts=2
+
 let g:ctrlp_custom_ignore = '\.pyc'
 " NERDTree
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 " LatexBox
-let g:LatexBox_viewer = 'skim'
+"let g:LatexBox_viewer = 'skim'
 let g:LatexBox_latexmk_options = '-pvc'
+let g:LatexBox_latexmk_async=1
+let g:LatexBox_latexmk_preview_continuously=1
 " SnipMate
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
@@ -121,4 +143,8 @@ let g:SuperTabDefaultCompletionType = "context"
 " jedi-vim
 let g:jedi#use_tabs_not_buffers = 0
 " Powerline
-let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
+"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
+"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized-light"}}}
+" vim-airline
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_powerline_fonts = 1
