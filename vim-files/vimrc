@@ -8,35 +8,32 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-"" Bundles
-Bundle 'amuelli/vim-colors-solarized'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-"Bundle 'itchyny/lightline.vim'
-Bundle 'bling/vim-airline'
-"Bundle 'file:///Volumes/HDD/Users/alex/Code/Python/powerline' , {'rtp': 'powerline/bindings/vim/'}
-"Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-fugitive'
-Bundle 'majutsushi/tagbar'
+"" Plugins
+Plugin 'amuelli/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
 
-Bundle 'garbas/vim-snipmate'
+Plugin 'garbas/vim-snipmate'
 " snipmate dependencies:
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
 
-Bundle 'pangloss/vim-javascript'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'davidhalter/jedi-vim'
-"Bundle 'klen/python-mode'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/python-mode'
+Plugin 'christoomey/vim-tmux-navigator'
 
-Bundle 'christoomey/vim-tmux-navigator'
 "" Look
 syntax enable
 set background=dark
@@ -115,36 +112,40 @@ set clipboard=unnamed
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" Plugin Settings
+
 ""JavaScript
 let g:used_javascript_libs = 'angularjs,jquery'
 " JavaScript (tabs = 2, lines = 79)
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType javascript set sw=2
 autocmd FileType javascript set ts=2
 autocmd FileType javascript set sts=2
 
-let g:ctrlp_custom_ignore = '\.pyc'
 " NERDTree
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+
 " LatexBox
 "let g:LatexBox_viewer = 'skim'
 let g:LatexBox_latexmk_options = '-pvc'
 let g:LatexBox_latexmk_async=1
 let g:LatexBox_latexmk_preview_continuously=1
+
 " SnipMate
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['python'] = 'django,python'
+
 " Supertab & OmniComplete
 let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabCompletionContexts = ['s:ContextDiscover']
 "let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
 "let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-p>", "&omnifunc:<c-x><c-o>"]
+
 " jedi-vim
 let g:jedi#use_tabs_not_buffers = 0
-" Powerline
-"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
-"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized-light"}}}
+
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
+
+" pymode
+let g:pymode_folding = 0

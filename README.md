@@ -5,6 +5,7 @@ This is a backup of my zsh, vim, git and some other configs.
 To install clone this repository and create the following symbolic links:
 
     ln -s Dotfiles ~/.config
+    ln -s Dotfiles/bash/bash_profile ~/.bash_profile
     ln -s Dotfiles/bash/bashrc ~/.bashrc
     ln -s Dotfiles/zsh/zshrc ~/.zshrc
     ln -s Dotfiles/zsh/oh-my-zsh ~/.oh-my-zsh
@@ -19,7 +20,7 @@ For easy handeling of vim plugins I use [Vundle] (https://github.com/gmarik/vund
     git submodule init
     git submodule update
 
-The listed bundles in the vimrc file can now be installed to vim/bundle by opening vim and execute the *:BundleInstall* command.
+The listed bundles in the vimrc file can now be installed to vim/bundle by opening vim and executing the *:PluginInstall* command.
 
 ## Update submodules
 To update the submodules (vundle and oh-my-zsh):
