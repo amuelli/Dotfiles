@@ -43,7 +43,7 @@ ZSH_THEME="solarized-powerline"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew python pip virtualenv osx tmux)
+plugins=(git brew python pip virtualenv osx tmux sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,13 +62,10 @@ alias la="ls -A"
 alias lla="ls -la"
 
 # Python virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/Code/Python/.env
 export PROJECT_HOME=$HOME/Code/Python
 source /usr/local/bin/virtualenvwrapper.sh
 
-### Postgress
-export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-
-### Powerline
-#export PATH="/Volumes/HDD/Users/alex/Library/Python/2.7/bin:$PATH"
-#. /Volumes/HDD/Users/alex/Library/Python/2.7/lib/python/site-packages/Powerline/bindings/zsh/powerline.zsh
+# add with homebrew installed packages to PATH
+export PATH=/usr/local/bin:$PATH
