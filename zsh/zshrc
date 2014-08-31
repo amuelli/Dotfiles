@@ -53,8 +53,8 @@ export LANG=en_US.UTF-8
 
 # User Specific aliases
 alias b3="ssh alex@weier.myownb3.com"
-alias muq="ssh alex@muq.ch"
-alias irc="ssh serum33@muq.ch"
+alias muq="mosh alex@muq.ch"
+alias irc="mosh serum33@muq.ch"
 alias jackfruit="ssh amuelli@jackfruit.icu.uzh.ch"
 alias distripress="ssh distripress.net0@ssh.netzone.ch"
 alias ll="ls -l"
@@ -66,6 +66,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/Code/Python/.env
 export PROJECT_HOME=$HOME/Code/Python
 source /usr/local/bin/virtualenvwrapper.sh
+
+# tmuxinator completion
+export EDITOR='vim'
+source ~/.bin/tmuxinator.zsh
 
 # add with homebrew installed packages to PATH
 export PATH=/usr/local/bin:$PATH
