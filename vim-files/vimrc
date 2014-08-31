@@ -33,6 +33,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Keithbsmiley/investigate.vim'
 
 "" Look
 syntax enable
@@ -90,17 +91,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-"Moving around wrapped lines
-vmap <D-j> gj
-vmap <D-k> gk
-vmap <D-4> g$
-vmap <D-6> g^
-vmap <D-0> g^
-nmap <D-j> gj
-nmap <D-k> gk
-nmap <D-4> g$
-nmap <D-6> g^
-nmap <D-0> g^
 
 set ttimeout
 set ttimeoutlen=50
@@ -113,7 +103,7 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" Plugin Settings
 
-""JavaScript
+" JavaScript
 let g:used_javascript_libs = 'angularjs,jquery'
 " JavaScript (tabs = 2, lines = 79)
 autocmd FileType javascript set sw=2
