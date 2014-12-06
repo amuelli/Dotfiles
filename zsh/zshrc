@@ -43,7 +43,7 @@ ZSH_THEME="solarized-powerline"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew python pip virtualenv osx tmux sudo)
+plugins=(git brew python pip virtualenv osx tmux tmuxinator sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +60,7 @@ alias distripress="ssh distripress.net0@ssh.netzone.ch"
 alias ll="ls -l"
 alias la="ls -A"
 alias lla="ls -la"
+alias :q="exit"
 
 # Python virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
@@ -69,7 +70,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # tmuxinator completion
 export EDITOR='vim'
-source ~/.bin/tmuxinator.zsh
 
 # add with homebrew installed packages to PATH
 export PATH=/usr/local/bin:$PATH
+# android tools
+export ANDROID_HOME=/usr/local/opt/android-sdk

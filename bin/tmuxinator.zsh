@@ -11,7 +11,7 @@ _tmuxinator() {
   read -cA words
 
   if [ "${#words}" -eq 2 ]; then
-    completions="$(tmuxinator commands)"
+    completions="$(tmuxinator completions start)"
   else
     completions="$(tmuxinator completions ${words[2,-2]})"
   fi
