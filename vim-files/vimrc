@@ -28,6 +28,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'heavenshell/vim-jsdoc'
 Plugin 'tpope/vim-markdown'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'davidhalter/jedi-vim'
@@ -101,6 +102,13 @@ set clipboard=unnamed
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
+
+"" Tab settings
+:nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+:nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+:nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+
 "" Plugin Settings
 
 " JavaScript
@@ -109,6 +117,7 @@ let g:used_javascript_libs = 'angularjs,jquery'
 autocmd FileType javascript set sw=2
 autocmd FileType javascript set ts=2
 autocmd FileType javascript set sts=2
+let g:jsdoc_default_mapping=0
 
 " NERDTree
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
