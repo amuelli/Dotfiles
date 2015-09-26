@@ -16,8 +16,7 @@
             "~/.vimrc": "vim-files/vimrc",
             "~/.tmux": "tmux-files/tmux",
             "~/.tmux.conf": "tmux-files/tmux.conf",
-            "~/.tmuxinator": "tmux-files/tmuxinator",
-            "~/.bin":"bin"
+            "~/.tmuxinator": "tmux-files/tmuxinator"
         }
     },
     {
