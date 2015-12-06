@@ -11,14 +11,27 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 "" Plugins
-Plugin 'amuelli/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
+Plugin 'amuelli/vim-colors-solarized'               "Adapated Solarized Color Scheme
+Plugin 'chriskempson/base16-vim'                    "Base16 Color Scheme
+Plugin 'bling/vim-airline'                          "lean & mean status/tabline
+Plugin 'airblade/vim-gitgutter'
+Plugin 'blueyed/vim-diminactive'
+Plugin 'ap/vim-css-color'
+
+Plugin 'scrooloose/nerdtree'                        "NerdTree Navigation Bar
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rking/ag.vim'
+
+Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-unimpaired'                       "Pairs of handy bracket mappings
+
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'rizzatti/dash.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'         "Make terminal vim and tmux work better together.
+
+Plugin 'scrooloose/syntastic'                       "Automated Syntax and Style Checking
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -30,6 +43,11 @@ Plugin 'heavenshell/vim-jsdoc'
 Plugin 'tpope/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 
+Plugin 'rizzatti/dash.vim'
+
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,7 +57,7 @@ filetype plugin indent on    " required
 "" Look
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme base16-google
 call togglebg#map("<F5>")
 set gfn=Source\ Code\ Pro\ for\ Powerline:h14
 "set gfn=Menlo:h14
@@ -93,9 +111,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
+" Quickly open/reload vim
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 set ttimeout
 set ttimeoutlen=50
+set colorcolumn=+1
 
 "" OSX settings
 " Make yy, D, and P work with the OSX clipboard
@@ -125,6 +146,16 @@ let g:jsdoc_default_mapping=0
 " NERDTree
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 
+" Syntastic
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
+
 "Ulitsnips
 "" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -138,9 +169,13 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
 
 " instant-markdown
-let g:instant_markdown_autostart = 0
-let g:instant_markdown_slow = 1
-nnoremap <C-m> :InstantMarkdownPreview<cr>
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_slow = 1
+"nnoremap <C-m> :InstantMarkdownPreview<cr>
 
 " Dash
 :nmap <silent> <leader>d <Plug>DashSearch
+
+" Diminactive
+let g:diminactive_enable_focus = 1
+let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix']
