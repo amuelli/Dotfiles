@@ -8,7 +8,7 @@ ZSH_CUSTOM="$HOME/Dotfiles/zsh/oh-my-zsh-custom"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="solarized-powerline"
+ZSH_THEME="bullet-train"
 DEFAULT_USER="alex"
 
 # Example aliases
@@ -71,3 +71,6 @@ export PATH=/usr/local/bin:$PATH
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # java home
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-google.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

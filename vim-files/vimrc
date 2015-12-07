@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 "" Plugins
-Plugin 'amuelli/vim-colors-solarized'               "Adapated Solarized Color Scheme
 Plugin 'chriskempson/base16-vim'                    "Base16 Color Scheme
 Plugin 'bling/vim-airline'                          "lean & mean status/tabline
 Plugin 'airblade/vim-gitgutter'
@@ -49,17 +48,17 @@ Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()           " required
+filetype plugin indent on   " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
 "" Look
 syntax on
 set background=dark
+let base16colorspace=256    " Access colors present in 256 colorspace
 colorscheme base16-google
-call togglebg#map("<F5>")
-set gfn=Source\ Code\ Pro\ for\ Powerline:h14
+set gfn=Source\ Code\ Pro\ for\ Powerline:h12
 "set gfn=Menlo:h14
 set t_Co=256
 set laststatus=2

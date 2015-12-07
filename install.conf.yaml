@@ -4,6 +4,7 @@
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
     ~/.zshrc: zsh/zshrc
+    ~/.config/base16-shell: zsh/base16-shell
     ~/.oh-my-zsh: zsh/oh-my-zsh/
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
