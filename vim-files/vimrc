@@ -44,8 +44,7 @@ Plugin 'suan/vim-instant-markdown'
 
 Plugin 'rizzatti/dash.vim'
 
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
+Plugin 'fmoralesc/vim-pad'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
@@ -156,21 +155,21 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 
 "Ulitsnips
-"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"" Trigger configuration
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" :UltiSnipsEdit to open in split window.
+let g:UltiSnipsEditSplit="context"
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
 
 " instant-markdown
-"let g:instant_markdown_autostart = 0
-"let g:instant_markdown_slow = 1
-"nnoremap <C-m> :InstantMarkdownPreview<cr>
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_slow = 0
+nnoremap <C-m> :InstantMarkdownPreview<cr>
 
 " Dash
 :nmap <silent> <leader>d <Plug>DashSearch
@@ -178,3 +177,27 @@ let g:airline_powerline_fonts = 1
 " Diminactive
 let g:diminactive_enable_focus = 1
 let g:diminactive_buftype_blacklist = ['nofile', 'nowrite', 'acwrite', 'quickfix']
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .DS_Store
+        \ --ignore "**/*.pyc"
+        \ -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" vim-pad
+let g:pad#search_backend = "ag"
+let g:pad#dir = "~/notes/"
+let g:pad#default_file_extension = ".md"
+let g:pad#window_height = 12
+let g:pad#window_width = 80
