@@ -1,0 +1,27 @@
+snippet sync "template for daily sync notes" b
+# Sync ${1:`date +%Y-%m-%d`}
+###### #locatee #sync
+- - -
+- $0
+endsnippet
+
+snippet 1on1 "template for weekly 1-on-1 notes" b
+# 1on1 ${1:`date +%Y-W%V`}
+###### #locatee #1on1 @Benedikt
+- - -
+- $0
+endsnippet
+
+snippet meeting "meeting note template with title and tags" b
+# ${1:Description} Meeting ${2:(`date +%Y-%m-%d`)}
+###### #locatee #meeting #${3:customer}
+- - -
+$0
+endsnippet
+
+snippet note "general note template with title and tags" b
+# ${1:New Note} ${2:(`date +%Y-%m-%d`)}
+###### #$3
+- - -
+$0
+endsnippet

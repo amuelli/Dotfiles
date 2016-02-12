@@ -13,6 +13,7 @@ Plugin 'gmarik/vundle'
 "" Plugins
 Plugin 'chriskempson/base16-vim'                    "Base16 Color Scheme
 Plugin 'bling/vim-airline'                          "lean & mean status/tabline
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'ap/vim-css-color'
@@ -145,7 +146,7 @@ let g:jsdoc_default_mapping=0
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 
 " Syntastic
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['jscs', 'jshint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
