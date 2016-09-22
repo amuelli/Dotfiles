@@ -70,7 +70,7 @@ export PATH=/usr/local/bin:$PATH
 # android tools
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # java home
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-google.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-google-dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL

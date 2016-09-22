@@ -57,7 +57,7 @@ filetype plugin indent on   " required
 syntax on
 set background=dark
 let base16colorspace=256    " Access colors present in 256 colorspace
-colorscheme base16-google
+colorscheme base16-google-dark
 set gfn=Source\ Code\ Pro\ for\ Powerline:h12
 "set gfn=Menlo:h14
 set t_Co=256
@@ -173,7 +173,7 @@ let g:instant_markdown_slow = 0
 nnoremap <C-m> :InstantMarkdownPreview<cr>
 
 " Dash
-:nmap <silent> <leader>d <Plug>DashSearch
+:nmap <silent> K <Plug>DashSearch
 
 " Diminactive
 let g:diminactive_enable_focus = 1
