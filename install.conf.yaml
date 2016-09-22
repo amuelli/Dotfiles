@@ -1,11 +1,18 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - clean: ['~']
 
 - link:
+    ~/.bashrc:
+        force: true
+        path: bash/bashrc
     ~/.bash_profile: bash/bash_profile
-    ~/.bashrc: bash/bashrc
     ~/.zshrc: zsh/zshrc
-    ~/.config/base16-shell: zsh/base16-shell
     ~/.oh-my-zsh: zsh/oh-my-zsh/
+    ~/.config/base16-shell: zsh/base16-shell
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.vim: vim-files/vim/
@@ -18,3 +25,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sudo gem install tmuxinator, Installing tmuxinator]
+

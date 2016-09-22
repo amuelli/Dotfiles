@@ -1,4 +1,4 @@
-# Dotfiles
+# dotfiles
 ## Description
 This is a backup of my zsh, vim, tmux, git and some other configs.
 ## Install

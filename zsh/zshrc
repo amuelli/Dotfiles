@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Path to your custom oh-my-zsh files
-ZSH_CUSTOM="$HOME/Dotfiles/zsh/oh-my-zsh-custom"
+ZSH_CUSTOM="$HOME/dotfiles/zsh/oh-my-zsh-custom"
 #
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
