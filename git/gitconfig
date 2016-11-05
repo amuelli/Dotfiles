@@ -19,3 +19,7 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = simple
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f

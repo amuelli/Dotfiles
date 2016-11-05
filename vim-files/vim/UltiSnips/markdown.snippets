@@ -5,9 +5,9 @@ snippet sync "template for daily sync notes" b
 - $0
 endsnippet
 
-snippet 1on1 "template for weekly 1-on-1 notes" b
-# 1on1 ${1:`date +%Y-W%V`}
-###### #locatee #1on1 @Benedikt
+snippet "1on1(\ )*(\w+)*"  "template for weekly 1-on-1 notes" br
+# 1on1 with ${1:`!p snip.rv = match.group(2) if match.group(1) is not None else "Benedikt"`} ${2:`date +%Y-W%V`}
+###### #locatee #1on1 @$1
 - - -
 - $0
 endsnippet

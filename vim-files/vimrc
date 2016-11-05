@@ -40,12 +40,19 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'heavenshell/vim-jsdoc'
 
+Plugin 'leafgarland/typescript-vim'
+"Plugin 'Quramy/tsuquyomi'
+
 Plugin 'tpope/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 
 Plugin 'rizzatti/dash.vim'
 
 Plugin 'fmoralesc/vim-pad'
+
+Plugin 'tpope/vim-speeddating'
+
+Plugin 'cohama/lexima.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
@@ -104,6 +111,7 @@ set listchars=tab:▸\ ,eol:¬
 
 "" Key Mappings
 let mapleader = ","
+let maplocalleader = ";"
 nnoremap <leader>m :NERDTreeToggle<cr>
 " faster window navigation
 nnoremap <leader>w <C-w>v<C-w>l
@@ -149,7 +157,10 @@ let g:jsdoc_default_mapping=0
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 
 " Syntastic
-let g:syntastic_javascript_checkers = ['jscs', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
+"let g:syntastic_javascript_checkers = ['jscs', 'jshint']
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -165,6 +176,8 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " :UltiSnipsEdit to open in split window.
 let g:UltiSnipsEditSplit="context"
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+
 
 " vim-airline
 let g:airline#extensions#whitespace#enabled = 0
@@ -203,5 +216,5 @@ endif
 let g:pad#search_backend = "ag"
 let g:pad#dir = "~/notes/"
 let g:pad#default_file_extension = ".md"
-let g:pad#window_height = 12
+let g:pad#window_height = 22
 let g:pad#window_width = 80
