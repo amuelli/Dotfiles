@@ -1,7 +1,7 @@
 # ~/.tmuxinator/locatee-ui.yml
 
-name: locatee-ui
-root: ~/Code/Javascript/locatee-ui/
+name: locatee-mobile-pilot
+root: ~/Code/Javascript/locatee-mobile-pilot/
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,9 +28,10 @@ root: ~/Code/Javascript/locatee-ui/
 # post: tmux -CC attach -t locatee-ui
 
 windows:
-  - editor: vim
+  - editor:
+      layout: 19fc,238x55,0,0{145x55,0,0,0,92x55,146,0[92x27,146,0,1,92x27,146,28,2]}
+      panes:
+        - vim
   - directory:
-  - server: gulp serve
-  - backend: cd ~/Code/Java/LocateeServer/LocateeServerWeb/; ./jetty.sh
+  - server: gulp --livereload "emulate ios"
   - music: cd; ncmpcpp
-  - hn: workon haxor-news; haxor-news; hn best
