@@ -57,7 +57,10 @@ filetype plugin indent on   " required
 syntax on
 set background=dark
 let base16colorspace=256    " Access colors present in 256 colorspace
-colorscheme base16-google-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 set gfn=Source\ Code\ Pro\ for\ Powerline:h12
 "set gfn=Menlo:h14
 set t_Co=256
