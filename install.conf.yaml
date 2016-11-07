@@ -21,6 +21,7 @@
     ~/.tmux.conf: tmux-files/tmux.conf
     ~/.tmuxinator: tmux-files/tmuxinator/
     ~/.my.cnf: mysql/my.cnf
+    ~/.hammerspoon: hammerspoon
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
