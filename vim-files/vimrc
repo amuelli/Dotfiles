@@ -44,7 +44,7 @@ Plugin 'leafgarland/typescript-vim'
 "Plugin 'Quramy/tsuquyomi'
 
 Plugin 'tpope/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 Plugin 'rizzatti/dash.vim'
 
