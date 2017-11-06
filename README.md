@@ -1,6 +1,12 @@
 # dotfiles
 ## Description
 This is a backup of my zsh, vim, tmux, git and some other configs.
+
+## Prequisits
+ - git
+ - python
+ - ruby (for tmuxinator)
+
 ## Install
 The settings can be installed by cloning this repository and running `./install` inside this directory.
 [Dotbot](https://github.com/anishathalye/dotbot) will install all submodules and create the necessary symbolic links as specified in `install.conf.yaml`.
