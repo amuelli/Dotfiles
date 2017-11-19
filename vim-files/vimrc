@@ -12,8 +12,6 @@ Plugin 'gmarik/vundle'
 
 "" Plugins
 Plugin 'chriskempson/base16-vim'                    "Base16 Color Scheme
-Plugin 'bling/vim-airline'                          "lean & mean status/tabline
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 
