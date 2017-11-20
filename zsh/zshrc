@@ -58,6 +58,7 @@ alias ll="ls -l"
 alias la="ls -A"
 alias lla="ls -la"
 alias :q="exit"
+alias mux="tmuxinator"
 
 # add with homebrew installed packages to PATH
 export PATH=/usr/local/bin:$PATH

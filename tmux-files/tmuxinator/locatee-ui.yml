@@ -1,7 +1,7 @@
 # ~/.tmuxinator/locatee-ui.yml
 
 name: locatee-ui
-root: ~/Code/Javascript/locatee-ui/
+root: ~/Code/locatee-ui/
 
 # Optional tmux socket
 # socket_name: foo
@@ -30,7 +30,4 @@ root: ~/Code/Javascript/locatee-ui/
 windows:
   - editor: vim
   - directory:
-  - server: gulp serve
-  - backend: cd ~/Code/Java/LocateeServer/LocateeServerWeb/; ./jetty.sh
-  - music: cd; ncmpcpp
-  - hn: workon haxor-news; haxor-news; hn best
+  - server: gulp serve --env=dev

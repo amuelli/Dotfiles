@@ -1,7 +1,7 @@
 # ~/.tmuxinator/locatee-ui.yml
 
-name: locatee-dasboard
-root: ~/Code/Javascript/locatee-dashboard/
+name: locatee-kiosk
+root: ~/Code/locatee-kiosk/
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,12 +28,6 @@ root: ~/Code/Javascript/locatee-dashboard/
 # post: tmux -CC attach -t locatee-ui
 
 windows:
-  - editor:
-      layout: 19fc,238x55,0,0{145x55,0,0,0,92x55,146,0[92x27,146,0,1,92x27,146,28,2]}
-      panes:
-        - vim
-        - #empty
+  - editor: vim
   - directory:
   - server: gulp serve
-  - music: cd; ncmpcpp
-  - hn: workon haxor-news; haxor-news; hn best
