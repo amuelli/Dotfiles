@@ -1,0 +1,30 @@
+snippet ngcomponent
+(function() {
+	'use strict';
+
+	angular
+		.module('${1:module}')
+		.component('${2:component}', $2);
+
+	/* @ngInject */
+	function $2(${3:dependencies}) {
+		// Usage:
+		//
+		// Creates:
+		//
+		var component = {
+			controller: ${4:Controller},
+			controllerAs: '${5:vm}',
+			bindings: {
+			}
+		};
+		return component;
+
+	}
+
+	/* @ngInject */
+	function $4() {
+
+	}
+})();
+endsnippet
