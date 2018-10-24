@@ -6,6 +6,22 @@ snippet sync "template for daily sync notes" b
 import datetime
 if datetime.datetime.now().weekday() == 0:
   snip.rv = 'Friday'
+else:
+  snip.rv = 'Yesterday'
+`}
+- $3
+### Today
+- $0
+endsnippet
+
+snippet synct "template for daily sync notes for tomorrow" b
+# Sync ${1:`date -v+1d +%Y-%m-%d`}
+###### #locatee #sync
+- - -
+### ${2:`!p
+import datetime
+if datetime.datetime.now().weekday() == 0:
+  snip.rv = 'Friday'
 else: 
   snip.rv = 'Yesterday'
 `}

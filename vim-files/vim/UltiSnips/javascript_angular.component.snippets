@@ -4,26 +4,15 @@ snippet ngcomponent
 
 	angular
 		.module('${1:module}')
-		.component('${2:component}', $2);
-
-	/* @ngInject */
-	function $2(${3:dependencies}) {
-		// Usage:
-		//
-		// Creates:
-		//
-		var component = {
-			controller: ${4:Controller},
-			controllerAs: '${5:vm}',
+		.component('${2:component}', {
+			controller: ${3:Controller},
+			controllerAs: '${4:vm}',
 			bindings: {
 			}
-		};
-		return component;
-
-	}
+		});
 
 	/* @ngInject */
-	function $4() {
+	function $3() {
 
 	}
 })();
