@@ -23,6 +23,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 
 Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-abolish.git'
 Plugin 'tpope/vim-unimpaired'                       "Pairs of handy bracket mappings
 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -43,7 +45,7 @@ Plugin 'leafgarland/typescript-vim'
 "Plugin 'Quramy/tsuquyomi'
 
 Plugin 'tpope/vim-markdown'
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'shime/vim-livedown'
 
 Plugin 'rizzatti/dash.vim'
 
@@ -123,6 +125,14 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+" fzf keybindings
+nnoremap <leader>d :Files<cr>
+nnoremap <leader>f :GFiles<cr>
+nnoremap <leader>g :GFiles?<cr>
+nnoremap <leader>l :Lines<cr>
+" NERDTree
+nmap <leader>t :NERDTreeFind<CR>
+
 set ttimeout
 set ttimeoutlen=50
 set colorcolumn=+1
@@ -169,11 +179,6 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
 
-" instant-markdown
-let g:instant_markdown_autostart = 0
-"let g:instant_markdown_slow = 0
-nnoremap <C-m> :InstantMarkdownPreview<cr>
-
 " Dash
 :nmap <silent> K <Plug>DashSearch
 
@@ -189,3 +194,16 @@ let g:pad#dir = "~/notes/"
 let g:pad#default_file_extension = ".md"
 let g:pad#window_height = 22
 let g:pad#window_width = 80
+
+:nnoremap + /\$\w\+_
+:nnoremap - f-x~
+
+" convert ### headings into *bold* text
+:nmap \# :%s/###\ \(\w\+\)/*\1*/g<CR>
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
