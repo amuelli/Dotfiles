@@ -1,4 +1,5 @@
 vim-files/vim/bundle
+vim-files/vim/plugged
 tmux-files/tmux/plugins
 weechat/logs
 *.log
