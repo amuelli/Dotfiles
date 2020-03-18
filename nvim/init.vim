@@ -4,7 +4,16 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
 
 "" Plugs
 Plug 'chriskempson/base16-vim'                    "Base16 Color Scheme
@@ -13,7 +22,7 @@ Plug 'ap/vim-css-color'
 
 Plug 'scrooloose/nerdtree'                        "NerdTree Navigation Bar
 Plug 'scrooloose/nerdcommenter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'
@@ -45,7 +54,7 @@ Plug 'shime/vim-livedown'
 
 Plug 'rizzatti/dash.vim'
 
-Plug 'fmoralesc/vim-pad'
+Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
 
 Plug 'tpope/vim-speeddating'
 
@@ -212,10 +221,14 @@ let g:pad#window_width = 80
 " convert ### headings into *bold* text
 :nmap \# :%s/###\ \(\w\+\)/*\1*/g<CR>
 
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\}
+"let g:ale_linters = {
+"\   'javascript': ['eslint'],
+"\}
+"let g:ale_fixers = {
+"\   'javascript': ['eslint'],
+"\}
 
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+"
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
