@@ -1,7 +1,6 @@
 vim-files/vim/bundle
 vim-files/vim/plugged
+vim-files/vim/sessions
 tmux-files/tmux/plugins
-weechat/logs
 *.log
-weechat/ssl
 
