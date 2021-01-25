@@ -10,6 +10,7 @@
         force: true
         path: bash/bashrc
     ~/.bash_profile: bash/bash_profile
+    ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/oh-my-zsh/
     ~/.config/base16-shell: zsh/base16-shell

@@ -60,8 +60,6 @@ alias lla="ls -la"
 alias :q="exit"
 alias mux="tmuxinator"
 
-# add with homebrew installed packages to PATH
-export PATH=/usr/local/bin:$PATH
 # android tools
 export ANDROID_HOME=/usr/local/opt/android-sdk
 # java home
