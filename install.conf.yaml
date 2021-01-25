@@ -27,5 +27,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [sudo gem install tmuxinator, Installing tmuxinator]
 

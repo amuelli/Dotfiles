@@ -5,7 +5,6 @@ This is a backup of my zsh, vim, tmux, git and some other configs.
 ## Prequisits
  - git
  - python
- - ruby (for tmuxinator)
 
 ## Install
 The settings can be installed by cloning this repository and running `./install` inside this directory.
