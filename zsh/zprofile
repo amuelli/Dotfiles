@@ -1,1 +1,4 @@
+# setup brew path
 eval $(/opt/homebrew/bin/brew shellenv)
+# configure brew completion
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
