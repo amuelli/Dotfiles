@@ -1,3 +1,15 @@
+if exists('g:vscode')
+
+"" OSX settings
+" Make yy, D, and P work with the OSX/Linux clipboards
+set clipboard^=unnamed,unnamedplus
+
+else
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Plugs will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -5,27 +17,26 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'
 
+
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'} " mru and stuff
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+"Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'} " color highlighting
+
+Plug 'kevinoid/vim-jsonc'
 
 "" Plugs
 Plug 'chriskempson/base16-vim'                    "Base16 Color Scheme
 Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-css-color'
+"Plug 'ap/vim-css-color'
 
-Plug 'scrooloose/nerdtree'                        "NerdTree Navigation Bar
 Plug 'scrooloose/nerdcommenter'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
+
 Plug 'tpope/vim-fugitive'
-Plug 'rking/ag.vim'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -33,53 +44,32 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-unimpaired'                       "Pairs of handy bracket mappings
 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux-focus-events'         "Make terminal vim and tmux work better together.
 
-
-Plug 'w0rp/ale'                                   "Automated Syntax and Style Checking
 Plug 'editorconfig/editorconfig-vim'
-
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'heavenshell/vim-jsdoc'
+"Plug 'rizzatti/dash.vim'
 
-Plug 'leafgarland/typescript-vim'
-"Plug 'Quramy/tsuquyomi'
+"Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
 
-Plug 'tpope/vim-markdown'
-Plug 'shime/vim-livedown'
-
-Plug 'rizzatti/dash.vim'
-
-Plug 'fmoralesc/vim-pad', { 'branch': 'devel' }
-
-Plug 'tpope/vim-speeddating'
 
 Plug 'cohama/lexima.vim'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-angular'
+
+" telescope dependencies
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" telescope
+Plug 'nvim-telescope/telescope.nvim'
+
+"Plug 'hrsh7th/nvim-compe'
 
 " List ends here. Plugs become visible to Vim after this call.
 call plug#end()
 
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
-noremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "" Look
 syntax on
@@ -133,25 +123,18 @@ set listchars=tab:▸\ ,eol:¬
 "" Key Mappings
 let mapleader = ","
 let maplocalleader = ";"
-nnoremap <leader>m :NERDTreeToggle<cr>
-" faster window navigation
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-" fzf keybindings
-nnoremap <leader>d :Files<cr>
-nnoremap <leader>f :GFiles<cr>
-nnoremap <leader>g :GFiles?<cr>
-nnoremap <leader>l :Lines<cr>
-" NERDTree
-nmap <leader>t :NERDTreeFind<CR>
+
+" telescope keybindings
+nnoremap <leader>f <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 set ttimeout
 set ttimeoutlen=50
@@ -162,9 +145,6 @@ set colorcolumn=+1
 set clipboard^=unnamed,unnamedplus
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-" enable mouse resizeing and scrolling
-set mouse=n
-
 
 "" Tab settings
 :nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
@@ -174,61 +154,50 @@ set mouse=n
 
 "" Plugin Settings
 
-" JavaScript
-let g:used_javascript_libs = 'angularjs,jquery,jasmine'
-" JavaScript (tabs = 2, lines = 79)
-autocmd FileType javascript set sw=2
-autocmd FileType javascript set ts=2
-autocmd FileType javascript set sts=2
-let g:jsdoc_default_mapping=0
-
-" NERDTree
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-
-"Ulitsnips
-"" Trigger configuration
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" :UltiSnipsEdit to open in split window.
-"let g:UltiSnipsEditSplit="context"
-"let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-
-
-" vim-airline
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_powerline_fonts = 1
-
 " Dash
 :nmap <silent> K <Plug>DashSearch
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:pad#search_backend = "ag"
-endif
-
 " vim-pad
-let g:pad#dir = "~/notes/"
-let g:pad#default_file_extension = ".md"
-let g:pad#window_height = 22
-let g:pad#window_width = 80
+"let g:pad#dir = "~/notes/"
+"let g:pad#default_file_extension = ".md"
+"let g:pad#window_height = 22
+"let g:pad#window_width = 80
 
-:nnoremap + /\$\w\+_
-:nnoremap - f-x~
-
-" convert ### headings into *bold* text
-:nmap \# :%s/###\ \(\w\+\)/*\1*/g<CR>
-
-"let g:ale_linters = {
-"\   'javascript': ['eslint'],
-"\}
-"let g:ale_fixers = {
-"\   'javascript': ['eslint'],
-"\}
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 "
+" Use <C-j> for select text for visual placeholder of snippet.
+"vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+"let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+"let g:coc_snippet_prev = '<c-k>'
+
 " Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+"imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
+
+
+" COC
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
+endif
