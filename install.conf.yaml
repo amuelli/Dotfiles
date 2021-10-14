@@ -15,6 +15,7 @@
     ~/.oh-my-zsh: zsh/oh-my-zsh/
     ~/.config/base16-shell: zsh/base16-shell
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/init-vscode.vim: nvim/init-vscode.vim
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.vim: vim-files/vim/

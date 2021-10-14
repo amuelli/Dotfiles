@@ -1,9 +1,5 @@
 if exists('g:vscode')
-
-"" OSX settings
-" Make yy, D, and P work with the OSX/Linux clipboards
-set clipboard^=unnamed,unnamedplus
-
+source ~/.config/nvim/init-vscode.vim
 else
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -34,8 +30,7 @@ Plug 'chriskempson/base16-vim'                    "Base16 Color Scheme
 Plug 'airblade/vim-gitgutter'
 "Plug 'ap/vim-css-color'
 
-Plug 'scrooloose/nerdcommenter'
-
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-surround'
