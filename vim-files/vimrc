@@ -15,16 +15,16 @@ Plugin 'chriskempson/base16-vim'                    "Base16 Color Scheme
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ap/vim-css-color'
 
-Plugin 'scrooloose/nerdtree'                        "NerdTree Navigation Bar
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'preservim/nerdtree'                         "NerdTree Navigation Bar
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 
-Plugin 'tpope/vim-surround.git'
-Plugin 'tpope/vim-repeat.git'
-Plugin 'tpope/vim-abolish.git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-unimpaired'                       "Pairs of handy bracket mappings
 
 Plugin 'christoomey/vim-tmux-navigator'
@@ -32,9 +32,9 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'         "Make terminal vim and tmux 
 
 
 Plugin 'w0rp/ale'                                   "Automated Syntax and Style Checking
-Plugin 'editorconfig/editorconfig-vim'
+"Plugin 'editorconfig/editorconfig-vim'
 
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 Plugin 'pangloss/vim-javascript'
