@@ -13,3 +13,6 @@
 [submodule "zsh/oh-my-zsh-custom/plugins/zsh-nvm"]
 	path = zsh/oh-my-zsh-custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm
+[submodule "zsh/ohmyzsh"]
+	path = zsh/ohmyzsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git
